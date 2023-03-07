@@ -1,8 +1,11 @@
 const URL = 'https://rekrutacja.webdeveloper.rtbhouse.net/files/banner.json';
 
+let productsContainer = document.querySelector('.products-container');
+let activeElementIdx = 0;
+
 const main = () => {
   fetchPhotos();
-  productsContainer = document.querySelector('.products-container');
+  setInterval(borderAnimation, 1000);
 };
 
 const fetchPhotos = () => {
@@ -17,6 +20,7 @@ const fetchPhotos = () => {
         const newProduct = createProductCard(product);
         productsContainer.append(newProduct);
       });
+      borderAnimation();
     })
     .catch((err) => console.error(err));
 };
@@ -37,6 +41,16 @@ const createProductCard = (product) => {
   productCard.append(productImage, productPrice);
 
   return productCard;
+};
+
+const borderAnimation = () => {
+  const allProducts = document.querySelectorAll('.product');
+  allProducts[activeElementIdx].classList.remove('active');
+  activeElementIdx === allProducts.length - 1
+    ? (activeElementIdx = 0)
+    : (activeElementIdx += 1);
+  allProducts[activeElementIdx].classList.add('active');
+  console.log(activeElementIdx);
 };
 
 document.addEventListener('DOMContentLoaded', main);
