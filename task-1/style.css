@@ -1,0 +1,11 @@
+.banner {
+  height: 250px;
+  width: 300px;
+  border: 1px solid gray;
+  margin: 250px auto 0;
+}
+
+.logo {
+  width: 80%;
+  height: auto;
+}
