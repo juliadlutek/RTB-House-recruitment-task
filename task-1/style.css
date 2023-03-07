@@ -1,11 +1,39 @@
 .banner {
   height: 250px;
   width: 300px;
-  border: 1px solid gray;
+  border: 1px solid lightgray;
   margin: 250px auto 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .logo {
-  width: 80%;
-  height: auto;
+  margin: 20px 50px;
+}
+
+.products-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  flex-grow: 1;
+  gap: 1px;
+  margin: 2px;
+}
+
+.product {
+  border: 1px solid lightgray;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.product__image {
+  height: 65px;
+}
+
+.product__price {
+  font-size: 11px;
+  font-weight: bold;
+  font-family: 'Arial', Helvetica, sans-serif;
 }
