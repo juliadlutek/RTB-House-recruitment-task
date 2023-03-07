@@ -30,6 +30,7 @@
 
 .product--active {
   border: 1px solid red;
+  cursor: pointer;
 }
 
 .product__image {
