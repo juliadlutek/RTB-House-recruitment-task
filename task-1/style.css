@@ -28,16 +28,16 @@
   align-items: center;
 }
 
+.product--active {
+  border: 1px solid red;
+}
+
 .product__image {
   height: 65px;
 }
 
 .product__price {
-  font-size: 11px;
+  font-size: 10px;
   font-weight: bold;
-  font-family: 'Arial', Helvetica, sans-serif;
-}
-
-.active {
-  border: 1px solid red;
+  font-family: sans-serif;
 }
