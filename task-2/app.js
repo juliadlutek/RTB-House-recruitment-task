@@ -23,6 +23,10 @@ const createProductCard = (product) => {
   const productCard = document.createElement('div');
   productCard.classList.add('product');
 
+  const closeButton = document.createElement('button');
+  closeButton.innerHTML = '&#10005;';
+  closeButton.classList.add('product__close');
+
   const productImage = document.createElement('img');
   productImage.setAttribute('src', product.imgURL);
   productImage.setAttribute('alt', product.name);
@@ -40,7 +44,13 @@ const createProductCard = (product) => {
   productButton.textContent = 'Check';
   productButton.classList.add('product__button');
 
-  productCard.append(productImage, productName, productPrice, productButton);
+  productCard.append(
+    closeButton,
+    productImage,
+    productName,
+    productPrice,
+    productButton
+  );
 
   return productCard;
 };

@@ -9,7 +9,13 @@
 }
 
 .logo {
-  margin: 20px;
+  margin: 20px 15px 5px;
+}
+
+.small-logo {
+  color: gray;
+  margin: 2px 5px;
+  font-size: 14px;
 }
 
 .products-container {
@@ -30,7 +36,7 @@
 }
 
 .product__image {
-  width: 100%;
+  width: 95%;
   height: auto;
 }
 
@@ -56,4 +62,15 @@
   padding: 5px 0;
   cursor: pointer;
   margin-bottom: 15px;
+}
+
+.product__close {
+  height: auto;
+  border: none;
+  color: gray;
+  cursor: pointer;
+  background-color: transparent;
+  margin: 5px 0 5px auto;
+  font-size: 12px;
+  font-weight: bold;
 }
