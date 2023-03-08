@@ -14,7 +14,8 @@ const fetchPhotos = () => {
         const newProduct = createProductCard(product);
         productsContainer.append(newProduct);
       });
-      productsContainer.firstChild.classList.add('active');
+      productsContainer.firstChild.classList.add('product--active');
+      sliderAnimationHandler();
     })
     .catch((err) => console.error(err));
 };
@@ -53,6 +54,17 @@ const createProductCard = (product) => {
   );
 
   return productCard;
+};
+
+const sliderAnimationHandler = () => {
+  setInterval(() => {
+    const allProducts = document.querySelectorAll('.product');
+    allProducts[activeElementIdx].classList.remove('product--active');
+    activeElementIdx === allProducts.length - 1
+      ? (activeElementIdx = 0)
+      : (activeElementIdx += 1);
+    allProducts[activeElementIdx].classList.add('product--active');
+  }, 2000);
 };
 
 document.addEventListener('DOMContentLoaded', fetchPhotos);
