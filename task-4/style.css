@@ -1,0 +1,49 @@
+@keyframes slideToTop {
+  from {
+    transform: translateY(600px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes moveLogo {
+  0% {
+    transform: translate(-300px, 300px);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(0, 300px);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+
+.banner {
+  border: 1px solid #707070;
+  margin: 5% auto;
+  font-family: sans-serif;
+  height: 600px;
+  width: 300px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+
+.logo {
+  background-color: #fcda16;
+  height: 100%;
+  animation: slideToTop 1s ease-in 0s;
+}
+
+.logo__photo {
+  top: 5%;
+  left: 10%;
+  position: absolute;
+  opacity: 0;
+  animation: moveLogo 2s forwards 0.5s;
+}
