@@ -13,6 +13,9 @@
     transform: translate(-300px, 300px);
     opacity: 0;
   }
+  25% {
+    opacity: 1;
+  }
   50% {
     transform: translate(0, 300px);
     opacity: 1;
@@ -20,6 +23,16 @@
   100% {
     transform: translate(0, 0);
     opacity: 1;
+  }
+}
+
+@keyframes rollLogoBackground {
+  from {
+    height: 100%;
+  }
+
+  to {
+    height: 0;
   }
 }
 
@@ -37,13 +50,15 @@
 .logo {
   background-color: #fcda16;
   height: 100%;
-  animation: slideToTop 1s ease-in 0s;
+  animation: slideToTop 1s ease-in 0s, rollLogoBackground 1s forwards 2.5s;
 }
 
 .logo__photo {
-  top: 5%;
-  left: 10%;
+  top: 0;
+  left: 15%;
   position: absolute;
   opacity: 0;
-  animation: moveLogo 2s forwards 0.5s;
+  animation: moveLogo 1.5s forwards 1s;
+  background-color: #fcda16;
+  padding: 20px;
 }
