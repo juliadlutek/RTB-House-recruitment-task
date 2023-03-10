@@ -20,6 +20,45 @@ const createOfferCard = (offer) => {
   offerCard.classList.add('offer');
   offerCard.style.backgroundImage = `url(${offer.imgURL})`;
 
+  const offerCountry = document.createElement('div');
+  offerCountry.textContent = offer.country;
+  offerCountry.classList.add('offer__country');
+
+  const offerCity = document.createElement('div');
+  offerCity.textContent = offer.city;
+  offerCity.classList.add('offer__city');
+
+  const offerPrice = document.createElement('div');
+  offerPrice.classList.add('offer__price');
+
+  const fromText = document.createElement('span');
+  fromText.textContent = 'from';
+  fromText.classList.add('offer__price__from');
+
+  const priceText = document.createElement('span');
+  priceText.textContent = `${offer.price} ${offer.currency}`;
+  priceText.classList.add('offer__price__price');
+
+  offerPrice.append(fromText, priceText);
+
+  const bookNow = document.createElement('div');
+  bookNow.classList.add('offer__book-now');
+
+  const bookNowArrowStart = document.createElement('div');
+  bookNowArrowStart.classList.add('offer__book-now__arrow__start');
+
+  const bookNowButton = document.createElement('button');
+  bookNowButton.textContent = 'Book now';
+  bookNowButton.classList.add('offer__book-now__button');
+
+  const bookNowArrowEnd = document.createElement('div');
+  bookNowArrowEnd.classList.add('offer__book-now__arrow__end');
+  bookNowArrowEnd.innerHTML = '&#10148;';
+
+  bookNow.append(bookNowArrowStart, bookNowButton, bookNowArrowEnd);
+
+  offerCard.append(offerCountry, offerCity, offerPrice, bookNow);
+
   return offerCard;
 };
 

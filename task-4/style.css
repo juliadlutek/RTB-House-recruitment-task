@@ -46,9 +46,18 @@
   }
 }
 
+@keyframes backgroundAnimation {
+  from {
+    background-size: 500px;
+  }
+  to {
+    background-size: 550px;
+  }
+}
+
 .banner {
   border: 1px solid #707070;
-  margin: 5% auto;
+  margin: 20px auto;
   font-family: sans-serif;
   height: 600px;
   width: 300px;
@@ -66,7 +75,7 @@
 
 .logo__photo {
   top: 0;
-  left: 15%;
+  left: 40px;
   position: absolute;
   opacity: 0;
   animation: moveLogo 1.5s forwards 1s;
@@ -85,6 +94,81 @@
 .offer {
   height: 600px;
   width: 300px;
-  background-position: 15% 20%;
+  background-position: 15% 50%;
   background-size: 500px;
+  position: relative;
+  animation: backgroundAnimation 5s forwards 3s;
+}
+
+.offer__city {
+  position: absolute;
+  bottom: 180px;
+  left: 40px;
+  background-color: #fcda16;
+  padding: 0 10px;
+  font-size: 40px;
+  font-weight: 600;
+  height: 50px;
+}
+
+.offer__country {
+  position: absolute;
+  bottom: 230px;
+  left: 40px;
+  background-color: white;
+  padding: 0 10px;
+  font-size: 20px;
+  font-weight: 600;
+  height: 25px;
+}
+
+.offer__price {
+  position: absolute;
+  bottom: 120px;
+  left: 100px;
+  color: #fcda16;
+  font-size: 15px;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+}
+
+.offer__price__price {
+  font-size: 25px;
+  font-weight: 600;
+  margin-top: -3px;
+}
+
+.offer__book-now {
+  position: absolute;
+  bottom: 50px;
+  left: 100px;
+  height: 70px;
+}
+
+.offer__book-now__arrow__start {
+  background-color: #fcda16;
+  height: 4px;
+  width: 70px;
+  position: absolute;
+  bottom: 47px;
+  left: -45px;
+}
+
+.offer__book-now__arrow__end {
+  color: #fcda16;
+  position: absolute;
+  bottom: 40px;
+  right: 10px;
+  font-size: 15px;
+}
+
+.offer__book-now__button {
+  background-color: white;
+  border: none;
+  padding: 10px 35px;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: -0.5px;
 }
