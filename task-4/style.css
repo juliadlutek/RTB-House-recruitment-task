@@ -10,7 +10,7 @@
   }
 }
 
-@keyframes moveLogo {
+@keyframes logoAnimation {
   0% {
     transform: translate(-300px, 300px);
     opacity: 0;
@@ -28,7 +28,7 @@
   }
 }
 
-@keyframes rollLogoBackground {
+@keyframes logoBackgroundAnimation {
   from {
     height: 100%;
   }
@@ -38,7 +38,55 @@
   }
 }
 
-@keyframes appear {
+@keyframes writingBackgroundAnimation {
+  0% {
+    width: 0;
+    padding: 0;
+  }
+
+  25% {
+    width: auto;
+    padding: 0 10px;
+  }
+
+  75% {
+    width: auto;
+    padding: 0 10px;
+  }
+
+  100% {
+    width: 0;
+    padding: 0;
+  }
+}
+
+@keyframes writingAnimation {
+  0% {
+    opacity: 0;
+    top: 50px;
+  }
+  1% {
+    opacity: 1;
+  }
+
+  25% {
+    top: 0;
+  }
+
+  75% {
+    top: 0;
+  }
+  99% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    top: -50px;
+  }
+}
+
+@keyframes appearAnimation {
   from {
     opacity: 0;
   }
@@ -48,7 +96,7 @@
   }
 }
 
-@keyframes backgroundAnimation {
+@keyframes backgroundPhotoAnimation {
   from {
     background-size: 500px;
   }
@@ -75,7 +123,7 @@
 .logo {
   background-color: #fcda16;
   height: 100%;
-  animation: slideToTop 1s ease-in 0s, rollLogoBackground 1s forwards 2.5s;
+  animation: slideToTop 1s ease-in 0s, logoBackgroundAnimation 1s forwards 2.5s;
   z-index: 2;
 }
 
@@ -84,7 +132,7 @@
   left: 40px;
   position: absolute;
   opacity: 0;
-  animation: moveLogo 1.5s forwards 1s;
+  animation: logoAnimation 1.5s forwards 1s;
   background-color: #fcda16;
   padding: 15px 20px;
 }
@@ -94,7 +142,7 @@
   top: 0;
   z-index: -1;
   opacity: 0;
-  animation: appear 0s forwards 1.5s;
+  animation: appearAnimation 0s forwards 1.5s;
 }
 
 .offer {
@@ -103,7 +151,26 @@
   background-position: 15% 50%;
   background-size: 500px;
   position: relative;
-  animation: backgroundAnimation 5s forwards 3s;
+  animation: backgroundPhotoAnimation 5s forwards 3s;
+}
+
+.offer__country {
+  position: absolute;
+  bottom: 232px;
+  left: 40px;
+  background-color: white;
+  font-size: 15px;
+  height: 18.45px;
+  width: 0;
+  padding: 0;
+  animation: writingBackgroundAnimation 4s forwards 3s;
+  overflow: hidden;
+}
+
+.offer__country__text {
+  opacity: 0;
+  animation: writingAnimation 3s forwards 3.5s;
+  position: relative;
 }
 
 .offer__city {
@@ -114,16 +181,16 @@
   padding: 0 10px;
   font-size: 45px;
   height: 53px;
+  width: 0;
+  padding: 0;
+  animation: writingBackgroundAnimation 4s forwards 4s;
+  overflow: hidden;
 }
 
-.offer__country {
-  position: absolute;
-  bottom: 230px;
-  left: 40px;
-  background-color: white;
-  padding: 0 10px;
-  font-size: 15px;
-  height: 18.45px;
+.offer__city__text {
+  opacity: 0;
+  animation: writingAnimation 3s forwards 4.5s;
+  position: relative;
 }
 
 .offer__price {

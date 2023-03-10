@@ -21,12 +21,22 @@ const createOfferCard = (offer) => {
   offerCard.style.backgroundImage = `url(${offer.imgURL})`;
 
   const offerCountry = document.createElement('div');
-  offerCountry.textContent = offer.country;
   offerCountry.classList.add('offer__country');
 
+  const offerCountryText = document.createElement('span');
+  offerCountryText.textContent = offer.country;
+  offerCountryText.classList.add('offer__country__text');
+
+  offerCountry.append(offerCountryText);
+
   const offerCity = document.createElement('div');
-  offerCity.textContent = offer.city;
   offerCity.classList.add('offer__city');
+
+  const offerCityText = document.createElement('span');
+  offerCityText.textContent = offer.city;
+  offerCityText.classList.add('offer__city__text');
+
+  offerCity.append(offerCityText);
 
   const offerPrice = document.createElement('div');
   offerPrice.classList.add('offer__price');
