@@ -53,7 +53,7 @@ const createOfferCard = (offer) => {
 
   const bookNowArrowEnd = document.createElement('img');
   bookNowArrowEnd.classList.add('offer__book-now__arrow__end');
-  bookNowArrowEnd.setAttribute('src', 'arrow.png');
+  bookNowArrowEnd.setAttribute('src', 'assets/arrow.png');
 
   bookNow.append(bookNowArrowStart, bookNowButton, bookNowArrowEnd);
 
