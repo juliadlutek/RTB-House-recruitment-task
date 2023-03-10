@@ -36,6 +36,16 @@
   }
 }
 
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 .banner {
   border: 1px solid #707070;
   margin: 5% auto;
@@ -51,6 +61,7 @@
   background-color: #fcda16;
   height: 100%;
   animation: slideToTop 1s ease-in 0s, rollLogoBackground 1s forwards 2.5s;
+  z-index: 2;
 }
 
 .logo__photo {
@@ -61,4 +72,19 @@
   animation: moveLogo 1.5s forwards 1s;
   background-color: #fcda16;
   padding: 20px;
+}
+
+.offers-container {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  opacity: 0;
+  animation: appear 0s forwards 1.5s;
+}
+
+.offer {
+  height: 600px;
+  width: 300px;
+  background-position: 15% 20%;
+  background-size: 500px;
 }
