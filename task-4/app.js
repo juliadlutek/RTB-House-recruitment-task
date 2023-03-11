@@ -3,6 +3,8 @@ const URL =
 
 let offersContainer = document.querySelector('.offers-container');
 
+let activeElementIdx = 0;
+
 const fetchOffers = () => {
   fetch(URL)
     .then((res) => res.json())
@@ -11,6 +13,8 @@ const fetchOffers = () => {
         const newOffer = createOfferCard(offer);
         offersContainer.append(newOffer);
       });
+      offersContainer.firstChild.classList.add('offer--active');
+      sliderAnimationHandler();
     })
     .catch((err) => console.error(err));
 };
@@ -42,7 +46,7 @@ const createOfferCard = (offer) => {
   offerPrice.classList.add('offer__price');
 
   const fromText = document.createElement('span');
-  fromText.textContent = 'from';
+  fromText.textContent = offer.priceText;
   fromText.classList.add('offer__price__from');
 
   const priceText = document.createElement('span');
@@ -70,6 +74,21 @@ const createOfferCard = (offer) => {
   offerCard.append(offerCountry, offerCity, offerPrice, bookNow);
 
   return offerCard;
+};
+
+let animationTimeout;
+
+const sliderAnimationHandler = () => {
+  setTimeout(() => {
+    animationTimeout = setInterval(() => {
+      const allOffers = document.querySelectorAll('.offer');
+      allOffers[activeElementIdx].classList.remove('offer--active');
+      activeElementIdx === allOffers.length - 1
+        ? clearInterval(animationTimeout)
+        : (activeElementIdx += 1);
+      allOffers[activeElementIdx].classList.add('offer--active');
+    }, 5000);
+  }, 3000);
 };
 
 document.addEventListener('DOMContentLoaded', fetchOffers);

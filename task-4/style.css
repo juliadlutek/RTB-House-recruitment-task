@@ -42,35 +42,37 @@
 
 @keyframes writingBackgroundAnimation {
   0%,
-  100% {
+  80% {
     width: 0;
     padding: 0;
   }
 
-  25%,
-  75% {
+  20%,
+  60% {
     width: auto;
     padding: 0 10px;
   }
 }
 
 @keyframes writingAnimation {
-  0%,
-  100% {
-    opacity: 0;
+  0% {
     top: 50px;
   }
+  0%,
+  60% {
+    opacity: 0;
+  }
   1%,
-  99% {
+  59% {
     opacity: 1;
   }
 
-  25%,
-  75% {
+  20%,
+  40% {
     top: 0;
   }
 
-  100% {
+  60% {
     top: -50px;
   }
 }
@@ -85,12 +87,22 @@
   }
 }
 
+@keyframes disappearAnimation {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
 @keyframes backgroundPhotoAnimation {
   from {
-    background-size: 500px;
+    background-size: auto 100%;
   }
   to {
-    background-size: 550px;
+    background-size: auto 120%;
   }
 }
 
@@ -119,6 +131,16 @@
   }
 }
 
+@keyframes nextOfferAnimation {
+  from {
+    left: 300px;
+  }
+
+  to {
+    left: 0;
+  }
+}
+
 * {
   font-family: 'Rubik';
 }
@@ -132,6 +154,7 @@
   display: block;
   overflow: hidden;
   position: relative;
+  animation: disappearAnimation 0.5s forwards 18.5s;
 }
 
 .logo {
@@ -157,15 +180,25 @@
   z-index: -1;
   opacity: 0;
   animation: appearAnimation 0s forwards 1.5s;
+  display: flex;
 }
 
 .offer {
   height: 600px;
   width: 300px;
   background-position: 15% 50%;
-  background-size: 500px;
+  background-size: auto 100%;
   position: relative;
   animation: backgroundPhotoAnimation 5s forwards 3s;
+  order: 2;
+}
+
+.offer--active {
+  order: 1;
+}
+
+.offer:nth-of-type(3) {
+  background-position: 55% 50%;
 }
 
 .offer__country {
@@ -177,13 +210,13 @@
   height: 18.45px;
   width: 0;
   padding: 0;
-  animation: writingBackgroundAnimation 4s forwards 3s;
+  animation: writingBackgroundAnimation 3 5s forwards 3s;
   overflow: hidden;
 }
 
 .offer__country__text {
   opacity: 0;
-  animation: writingAnimation 3s forwards 3.5s;
+  animation: writingAnimation 3 5s forwards 3.5s;
   position: relative;
 }
 
@@ -197,13 +230,13 @@
   height: 53px;
   width: 0;
   padding: 0;
-  animation: writingBackgroundAnimation 4s forwards 4s;
+  animation: writingBackgroundAnimation 3 5s forwards 4s;
   overflow: hidden;
 }
 
 .offer__city__text {
   opacity: 0;
-  animation: writingAnimation 3s forwards 4.5s;
+  animation: writingAnimation 3 5s forwards 4.5s;
   position: relative;
 }
 
@@ -223,7 +256,7 @@
 .offer__price > span {
   opacity: 0;
   position: relative;
-  animation: writingAnimation 3s forwards 5s;
+  animation: writingAnimation 3 5s forwards 5s;
 }
 
 .offer__price__price {
