@@ -1,3 +1,9 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
 .banner {
   height: 250px;
   width: 300px;
@@ -39,6 +45,6 @@
 
 .product__price {
   font-size: 10px;
-  font-weight: bold;
+  font-weight: 600;
   font-family: sans-serif;
 }

@@ -10,10 +10,12 @@ const fetchPhotos = () => {
       const randomProducts = data.offers
         .sort(() => 0.5 - Math.random())
         .slice(0, 4);
+
       randomProducts.map((product) => {
         const newProduct = createProductCard(product);
         productsContainer.append(newProduct);
       });
+
       borderAnimationHandler();
     })
     .catch((err) => console.error(err));
@@ -58,9 +60,11 @@ const borderAnimationHandler = () => {
 const borderAnimation = () => {
   const allProducts = document.querySelectorAll('.product');
   allProducts[activeElementIdx].classList.remove('product--active');
+
   activeElementIdx === allProducts.length - 1
     ? (activeElementIdx = 0)
     : (activeElementIdx += 1);
+
   allProducts[activeElementIdx].classList.add('product--active');
 };
 

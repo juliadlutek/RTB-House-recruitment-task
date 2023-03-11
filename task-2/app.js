@@ -10,10 +10,12 @@ const fetchPhotos = () => {
       const randomProducts = data.offers
         .sort(() => 0.5 - Math.random())
         .slice(0, 3);
+
       randomProducts.map((product) => {
         const newProduct = createProductCard(product);
         productsContainer.append(newProduct);
       });
+
       productsContainer.firstChild.classList.add('product--active');
       sliderAnimationHandler();
     })
@@ -60,9 +62,11 @@ const sliderAnimationHandler = () => {
   setInterval(() => {
     const allProducts = document.querySelectorAll('.product');
     allProducts[activeElementIdx].classList.remove('product--active');
+
     activeElementIdx === allProducts.length - 1
       ? (activeElementIdx = 0)
       : (activeElementIdx += 1);
+
     allProducts[activeElementIdx].classList.add('product--active');
   }, 2000);
 };
