@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
 
+:root {
+  --yellow: #fcda16;
+  --white: #ffffff;
+  --grey: #707070;
+}
+
 @keyframes slideToTop {
   from {
     transform: translateY(600px);
@@ -146,7 +152,7 @@
 }
 
 .banner {
-  border: 1px solid #707070;
+  border: 1px solid var(--grey);
   margin: 20px auto;
   font-family: sans-serif;
   height: 600px;
@@ -158,7 +164,7 @@
 }
 
 .logo {
-  background-color: #fcda16;
+  background-color: var(--yellow);
   height: 100%;
   animation: slideToTop 1s ease-in 0s, logoBackgroundAnimation 1s forwards 2.5s;
   z-index: 2;
@@ -170,7 +176,7 @@
   position: absolute;
   opacity: 0;
   animation: logoAnimation 1.5s forwards 1s;
-  background-color: #fcda16;
+  background-color: var(--yellow);
   padding: 15px 20px;
 }
 
@@ -205,7 +211,7 @@
   position: absolute;
   bottom: 232px;
   left: 40px;
-  background-color: white;
+  background-color: var(--white);
   font-size: 15px;
   height: 18.45px;
   width: 0;
@@ -224,7 +230,7 @@
   position: absolute;
   bottom: 180px;
   left: 40px;
-  background-color: #fcda16;
+  background-color: var(--yellow);
   padding: 0 10px;
   font-size: 45px;
   height: 53px;
@@ -244,7 +250,7 @@
   position: absolute;
   bottom: 120px;
   left: 100px;
-  color: #fcda16;
+  color: var(--yellow);
   font-size: 15px;
   font-weight: 400;
   display: flex;
@@ -274,7 +280,7 @@
 }
 
 .offer__book-now__arrow__start {
-  background-color: #fcda16;
+  background-color: var(--yellow);
   height: 3px;
   width: 0;
   position: absolute;
@@ -295,7 +301,7 @@
 }
 
 .offer__book-now__button {
-  background-color: white;
+  background-color: var(--white);
   border: none;
   width: 100%;
   height: 100%;
