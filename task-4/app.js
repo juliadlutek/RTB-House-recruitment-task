@@ -2,6 +2,7 @@ const URL =
   'https://rekrutacja.webdeveloper.rtbhouse.net/files/banner_vip.json';
 
 let offersContainer = document.querySelector('.offers-container');
+let stepsContainer = document.querySelector('.steps-container');
 
 let activeElementIdx = 0;
 
@@ -83,10 +84,16 @@ const sliderAnimationHandler = () => {
     animationTimeout = setInterval(() => {
       const allOffers = document.querySelectorAll('.offer');
       allOffers[activeElementIdx].classList.remove('offer--active');
+
+      const allSteps = document.querySelectorAll('.step');
+      allSteps[activeElementIdx].classList.remove('step--active');
+
       activeElementIdx === allOffers.length - 1
         ? clearInterval(animationTimeout)
         : (activeElementIdx += 1);
+
       allOffers[activeElementIdx].classList.add('offer--active');
+      allSteps[activeElementIdx].classList.add('step--active');
     }, 5000);
   }, 3000);
 };
